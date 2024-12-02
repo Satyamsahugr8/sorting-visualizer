@@ -752,23 +752,18 @@ function SortingVisualizer() {
           Speed:
           <input className="input" defaultValue="100" type="range" step="25" min="0" max="100" onChange={(event)=> {
             if (event.target.value === '100') {
-              console.log(100);
               return setArraySpeed(50);
             }
             if (event.target.value === '75') {
-              console.log(75);
               return setArraySpeed(100);
             }
             if (event.target.value === '50') {  
-              console.log(50);
               return setArraySpeed(150);
             }
             if (event.target.value === '25') {
-              console.log(25);
               return setArraySpeed(200);
             } 
             if (event.target.value === '0') {
-              console.log(0);
               return setArraySpeed(250);
             }
             
