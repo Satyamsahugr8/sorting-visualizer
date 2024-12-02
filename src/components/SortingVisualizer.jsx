@@ -694,10 +694,10 @@ function SortingVisualizer() {
   return (
     <div className="w-screen h-screen bg-black gap-1 flex flex-col p-0.5">
       
-      <div className="w-full h-14 bg-slate-500 flex justify-n items-center px-6 gap-36">
+      <div className="w-full h-14 bg-slate-500 flex justify-between items-center px-6">
 
         <div className="w-400">
-          <h4 className={`p-2 text-xl font-semibold px-3 hover:text-[#B53DF5] ${Disabled ? 'text-[#B53DF5]' : 'text-white'}`}>Sorting Visualizer</h4>
+          <h4 className={`p-2 text-xl font-semibold px-3 hover:text-black ${Disabled ? 'text-black' : 'text-white'}`}>Sorting Visualizer</h4>
         </div>
 
       <div className="h-12 w-1200 flex justify-center items-center gap-1.5 p-2">
@@ -746,7 +746,7 @@ function SortingVisualizer() {
 
       </div>
 
-      <div className="flex gap-5">
+      <div className="flex justify-between gap-3">
 
         <p className={`text-white ${Disabled ? 'hover:text-white' : 'hover:text-black'}`}>
           Speed:
