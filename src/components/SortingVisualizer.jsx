@@ -751,22 +751,27 @@ function SortingVisualizer() {
         <p className={`text-white ${Disabled ? 'hover:text-white' : 'hover:text-black'}`}>
           Speed:
           <input className="input" defaultValue="100" type="range" step="25" min="0" max="100" onChange={(event)=> {
-            let value = event.target.value;
-            if (value === 100) {
-              value = 100;
+            if (event.target.value === '100') {
+              console.log(100);
+              return setArraySpeed(50);
+            }
+            if (event.target.value === '75') {
+              console.log(75);
+              return setArraySpeed(100);
+            }
+            if (event.target.value === '50') {  
+              console.log(50);
+              return setArraySpeed(150);
+            }
+            if (event.target.value === '25') {
+              console.log(25);
+              return setArraySpeed(200);
             } 
-            if (value === 75) {
-              value = 150;
+            if (event.target.value === '0') {
+              console.log(0);
+              return setArraySpeed(250);
             }
-            if (value === 50) {  
-              value = 200;
-            }
-            if (value === 25) {
-              value = 250;
-            } else {
-              value = 300;
-            }
-            return setArraySpeed(value);
+            
           }}
           disabled={Disabled}
           ></input>
