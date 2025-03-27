@@ -4,8 +4,8 @@ import Bar from "./Bar";
 function SortingVisualizer() {
 
   const [val, setVal] = useState([{ bars: [{ arrayValue: "", color: "" }] }]);
-  const [NUMBER_OF_ARRAY_BARS, setArraySize] = useState(10); 
-  const [arraySpeed, setArraySpeed] = useState(100);
+  const [NUMBER_OF_ARRAY_BARS, setArraySize] = useState(20); 
+  const [arraySpeed, setArraySpeed] = useState(8);
   const [Disabled, setDisabled] = React.useState(false);
 
   useEffect(() => {
@@ -752,19 +752,19 @@ function SortingVisualizer() {
           Speed:
           <input className="input" defaultValue="100" type="range" step="25" min="0" max="100" onChange={(event)=> {
             if (event.target.value === '100') {
-              return setArraySpeed(50);
+              return setArraySpeed(8);
             }
             if (event.target.value === '75') {
-              return setArraySpeed(100);
+              return setArraySpeed(10);
             }
             if (event.target.value === '50') {  
-              return setArraySpeed(150);
+              return setArraySpeed(30);
             }
             if (event.target.value === '25') {
-              return setArraySpeed(200);
+              return setArraySpeed(40);
             } 
             if (event.target.value === '0') {
-              return setArraySpeed(250);
+              return setArraySpeed(50);
             }
             
           }}
