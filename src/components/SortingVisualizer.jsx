@@ -5,7 +5,7 @@ function SortingVisualizer() {
 
   const [val, setVal] = useState([{ bars: [{ arrayValue: "", color: "" }] }]);
   const [NUMBER_OF_ARRAY_BARS, setArraySize] = useState(20); 
-  const [arraySpeed, setArraySpeed] = useState(8);
+  const [arraySpeed, setArraySpeed] = useState(3);
   const [Disabled, setDisabled] = useState(false);
 
   useEffect(() => {
@@ -750,19 +750,19 @@ function SortingVisualizer() {
             Speed:
             <input className="input w-24 sm:w-auto ml-2" defaultValue="100" type="range" step="25" min="0" max="100" onChange={(event)=> {
               if (event.target.value === '100') {
-                return setArraySpeed(8);
+                return setArraySpeed(3);
               }
               if (event.target.value === '75') {
-                return setArraySpeed(10);
+                return setArraySpeed(6);
               }
               if (event.target.value === '50') {  
-                return setArraySpeed(30);
+                return setArraySpeed(12);
               }
               if (event.target.value === '25') {
-                return setArraySpeed(40);
+                return setArraySpeed(25);
               } 
               if (event.target.value === '0') {
-                return setArraySpeed(50);
+                return setArraySpeed(30);
               }
             }}
             disabled={Disabled}
