@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Bar from "./Bar";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 function SortingVisualizer() {
 
   const [val, setVal] = useState([{ bars: [{ arrayValue: "", color: "" }] }]);
-  const [NUMBER_OF_ARRAY_BARS, setArraySize] = useState(20); 
-  const [arraySpeed, setArraySpeed] = useState(3);
+  const [NUMBER_OF_ARRAY_BARS, setArraySize] = useState(30); 
+  const [arraySpeed, setArraySpeed] = useState(20);
   const [Disabled, setDisabled] = useState(false);
 
   useEffect(() => {
@@ -694,9 +695,11 @@ function SortingVisualizer() {
   return (
     <div className="w-screen h-screen bg-black gap-1 flex flex-col p-0.5">
       {/* Header */}
-      <div className="w-full h-14 bg-slate-500 flex flex-row justify-between items-center px-2 sm:px-6 py-2 sm:py-0">
+      <div className="w-full h-14 bg-slate-500 flex flex-row gap-2 justify-between items-center px-2 sm:px-6 py-2 sm:py-0">
         <div className="w-full sm:w-400 flex justify-center sm:justify-start">
-          <h4 className={`p-2 text-lg sm:text-xl font-semibold px-3 hover:text-black ${Disabled ? 'text-black' : 'text-white'}`}>Sorting Visualizer</h4>
+          <h4 className={`p-2 text-lg sm:text-xl font-semibold px-3 hover:text-black ${Disabled ? 'text-black' : 'text-white'}`}>
+            Sorting Visualizer</h4>
+          <a href="https://github.com/Satyamsahugr8/sorting-visualizer"><FaExternalLinkAlt className="mt-3"/></a>
         </div>
         {/* Hide controls on mobile */}
         <div className="hidden sm:flex w-full sm:w-auto flex-wrap sm:flex-nowrap justify-center items-center gap-1.5 p-2">
@@ -708,6 +711,7 @@ function SortingVisualizer() {
           >
             Reset Array
           </button>
+
           <button
             className={`p-2 text-xs px-2 sm:px-4 text-white rounded-full border border-black ${Disabled ? 'hover:text-white' : 'hover:text-black'} ${Disabled ? '' : 'hover:bg-indigo-400'} ${Disabled ? 'bg-gray-400' : 'bg-gray-700'}`}
             onClick={() => bubbleSort()}
@@ -715,20 +719,7 @@ function SortingVisualizer() {
           >
             Bubble sort
           </button>
-          <button
-            className={`p-2 text-xs px-2 sm:px-4 text-white rounded-full border border-black ${Disabled ? 'hover:text-white' : 'hover:text-black'} ${Disabled ? '' : 'hover:bg-indigo-400'} ${Disabled ? 'bg-gray-400' : 'bg-gray-700'}`}
-            onClick={() => merger()}
-            disabled={Disabled}
-          >
-            merge sort
-          </button>
-          <button
-            className={`p-2 text-xs px-2 sm:px-4 text-white rounded-full border border-black ${Disabled ? 'hover:text-white' : 'hover:text-black'} ${Disabled ? '' : 'hover:bg-indigo-400'} ${Disabled ? 'bg-gray-400' : 'bg-gray-700'}`}
-            onClick={() => quicker()}
-            disabled={Disabled}
-          >
-            quick sort
-          </button>
+          
           <button
             className={`p-2 text-xs px-2 sm:px-4 text-white rounded-full border border-black ${Disabled ? 'hover:text-white' : 'hover:text-black'} ${Disabled ? '' : 'hover:bg-indigo-400'} ${Disabled ? 'bg-gray-400' : 'bg-gray-700'}`}
             onClick={() => selectionSort()}
@@ -736,6 +727,7 @@ function SortingVisualizer() {
           >
             Selection sort
           </button>
+
           <button
             className={`p-2 text-xs px-2 sm:px-4 text-white rounded-full border border-black ${Disabled ? 'hover:text-white' : 'hover:text-black'} ${Disabled ? '' : 'hover:bg-indigo-400'} ${Disabled ? 'bg-gray-400' : 'bg-gray-700'}`}
             onClick={() => insertionSort()}
@@ -743,36 +735,59 @@ function SortingVisualizer() {
           >
             Insertion sort
           </button>
+
+          <button
+            className={`p-2 text-xs px-2 sm:px-4 text-white rounded-full border border-black ${Disabled ? 'hover:text-white' : 'hover:text-black'} ${Disabled ? '' : 'hover:bg-indigo-400'} ${Disabled ? 'bg-gray-400' : 'bg-gray-700'}`}
+            onClick={() => merger()}
+            disabled={Disabled}
+          >
+            merge sort
+          </button>
+
+          <button
+            className={`p-2 text-xs px-2 sm:px-4 text-white rounded-full border border-black ${Disabled ? 'hover:text-white' : 'hover:text-black'} ${Disabled ? '' : 'hover:bg-indigo-400'} ${Disabled ? 'bg-gray-400' : 'bg-gray-700'}`}
+            onClick={() => quicker()}
+            disabled={Disabled}
+          >
+            quick sort
+          </button>
+          
         </div>
+
         {/* Sliders */}
-        <div className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-3 w-full sm:w-auto mt-2 sm:mt-0">
-          <p className={`text-white ${Disabled ? 'hover:text-white' : 'hover:text-black'} text-sm`}>
+        <div className="flex flex-col sm:flex-row justify-between gap-4 w-full sm:w-auto mt-2 sm:mt-0">
+          
+          <p className={`text-white ${Disabled ? 'hover:text-white' : 'hover:text-black'} text-xs lg:text-sm flex`}>
             Speed:
-            <input className="input w-24 sm:w-auto ml-2" defaultValue="100" type="range" step="25" min="0" max="100" onChange={(event)=> {
+            <input className="input w-14 lg:w-auto ml-2" defaultValue="100" type="range" step="25" min="0" max="100" onChange={(event)=> {
               if (event.target.value === '100') {
-                return setArraySpeed(3);
+                return setArraySpeed(20);
               }
               if (event.target.value === '75') {
-                return setArraySpeed(6);
+                return setArraySpeed(40);
               }
               if (event.target.value === '50') {  
-                return setArraySpeed(12);
+                return setArraySpeed(60);
               }
               if (event.target.value === '25') {
-                return setArraySpeed(25);
+                return setArraySpeed(80);
               } 
               if (event.target.value === '0') {
-                return setArraySpeed(30);
+                return setArraySpeed(100);
               }
             }}
             disabled={Disabled}
             />
           </p>
-          <p className={`text-white ${Disabled ? 'hover:text-white' : 'hover:text-black'} text-sm`}>Select array size:
-            <input className="input w-24 sm:w-auto ml-2" defaultValue="20" type="range" step="10" min="10" max="300" onChange={(event)=>setArraySize(event.target.value)} 
+  
+          <p className={`text-white ${Disabled ? 'hover:text-white' : 'hover:text-black'} text-xs lg:text-sm flex`}>
+            Size:
+            {/* <span className="hidden sm:inline">Select array size:</span> */}
+            <input className="input w-14 lg:w-auto ml-2" defaultValue="30" type="range" step="10" min="10" max="80" onChange={(event)=>setArraySize(event.target.value)} 
             disabled={Disabled}
             />
           </p>
+
         </div>
       </div>
       {/* Mobile controls below nav */}

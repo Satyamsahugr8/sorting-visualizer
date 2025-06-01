@@ -7,6 +7,6 @@ export default defineConfig({
   base: '/sorting-visualizer/',
   server: {
     host: '0.0.0.0', // This allows other devices on the network to access the server
-    // port: 5173, // Default port, can be changed if needed
+    port: 5174, // Default port, can be changed if needed
   }
 })
