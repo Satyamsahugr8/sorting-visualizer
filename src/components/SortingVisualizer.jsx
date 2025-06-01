@@ -697,7 +697,7 @@ function SortingVisualizer() {
       {/* Header */}
       <div className="w-full h-14 bg-slate-500 flex flex-row gap-2 justify-between items-center px-2 sm:px-6 py-2 sm:py-0">
         <div className="w-full sm:w-400 flex justify-center sm:justify-start">
-          <h4 className={`p-2 text-lg sm:text-xl font-semibold px-3 hover:text-black ${Disabled ? 'text-black' : 'text-white'}`}>
+          <h4 className={`p-2 text-lg sm:text-xl font-semibold px-3 ${Disabled ? 'text-black' : 'text-white'} hover:bg-gradient-to-r from-blue-500 to-purple-400 hover:bg-clip-text hover:text-transparent`}>
             Sorting Visualizer</h4>
           <a href="https://github.com/Satyamsahugr8/sorting-visualizer"><FaExternalLinkAlt className="mt-3"/></a>
         </div>
@@ -847,8 +847,8 @@ function SortingVisualizer() {
       </div>
       {/* Footer */}
       <div className={`group text-xs sm:text-sm flex justify-end p-2 sm:p-3 mt-4 sm:mt-12`}>
-        <a href="https://github.com/Satyamsahugr8" className={`group-hover:hidden ${Disabled ? 'text-purple-400' : 'text-white'} `}>Made with {Disabled ? '💜' : '🤍' } by Satyam Sahu</a>
-        <a href="https://github.com/Satyamsahugr8" className={`hidden group-hover:inline text-purple-400`}> Made with 💜 by Satyam Sahu</a>
+        <a href="https://github.com/Satyamsahugr8/" className={`hover:bg-gradient-to-r from-blue-500 to-purple-400 hover:bg-clip-text hover:text-transparent ${Disabled ? 'bg-gradient-to-r from-blue-500 to-purple-400 bg-clip-text text-transparent' : 'text-white'} `}>Made with 🤍 by Satyam Sahu</a>
+        {/* <a href="https://github.com/Satyamsahugr8" className={`hidden group-hover:inline text-purple-400`}> Made with 💜 by Satyam Sahu</a> */}
       </div>
     </div>
   );
